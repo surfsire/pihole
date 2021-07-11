@@ -1,4 +1,5 @@
 # pihole
-Block List for PiHole
+## Block Lists for PiHole
 
-Personal Adlist instead of adding individual sites via blacklist
+### Roku
+Sites potentially pinged by Roku devices. Unnessecary for normal operation and/or ad or telemetry related
