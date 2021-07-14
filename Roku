@@ -1,7 +1,12 @@
 #List of sites Roku pings, which are nonessential or ad based.
+
+# NOTE -- In addition to Blocking disable Advertising and Disable Network Pings
+# Home x5, FF, Play, Rewind, Play, FF
+
 #Sources:
 # https://jasonpearce.com/2020/09/16/how-to-disable-ads-on-the-roku-home-screen/
 # https://github.com/mansguiche/pihole-roku-list/blob/master/roku-block-list.txt
+# https://community.roku.com/t5/Roku-Developer-Program/Request-Remove-Connect-to-Internet-Requirement/td-p/354035
 
 0.0.0.0	ads.roku.com
 0.0.0.0	amarillo.logs.roku.com
