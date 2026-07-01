@@ -1,67 +1,158 @@
-#List of sites Roku pings, which are nonessential or ad based.
-
-# NOTE -- In addition to Blocking disable Advertising and Disable Network Pings
-# Home x5, FF, Play, Rewind, Play, FF
-
-#Sources:
-# https://jasonpearce.com/2020/09/16/how-to-disable-ads-on-the-roku-home-screen/
-# https://github.com/mansguiche/pihole-roku-list/blob/master/roku-block-list.txt
-# https://community.roku.com/t5/Roku-Developer-Program/Request-Remove-Connect-to-Internet-Requirement/td-p/354035
-
-0.0.0.0	ads.roku.com
-0.0.0.0	amarillo.logs.roku.com
-0.0.0.0	amoeba-plus.web.roku.com
-0.0.0.0	austin.logs.roku.com
-0.0.0.0	bryan.logs.roku.com
-0.0.0.0	camden.logs.roku.com
-0.0.0.0	cloudservices.roku.com
-0.0.0.0	cooper.logs.roku.com
-0.0.0.0	customer-feedbacks.web.roku.com
-0.0.0.0	digdug-g2.logs.roku.com
-0.0.0.0	digdug.logs.roku.com
-0.0.0.0	display.ravm.tv
-0.0.0.0	esp.logs.roku.com
-0.0.0.0	giga.logs.roku.com
-0.0.0.0	gilbert.logs.roku.com
-0.0.0.0	griffin.logs.roku.com
-0.0.0.0	hereford.logs.roku.com
-0.0.0.0	i.ads.roku.com
-0.0.0.0	identity-dev.ads.roku.com
-0.0.0.0	identity.ads.roku.com
-0.0.0.0	lagrange.logs.roku.com
-0.0.0.0	liberty.logs.roku.com
-0.0.0.0	littlefield.logs.roku.com
-0.0.0.0	logs.roku.com
-0.0.0.0	longview.logs.roku.com
-0.0.0.0	midland.logs.roku.com
-0.0.0.0	mobile.logs.roku.com
-0.0.0.0	p.ads.roku.com
-0.0.0.0	paolo.logs.roku.com
-0.0.0.0	raps-perf.ravm.tv
-0.0.0.0	raps.ravm.tv
-0.0.0.0	ravm.tv
-0.0.0.0	richmond.logs.roku.com
-0.0.0.0	rollingwood.logs.roku.com
-0.0.0.0	rxr.ravm.tv
-0.0.0.0	samples.voice.cti.roku.com
-0.0.0.0	scribe.logs.roku.com
-0.0.0.0	sugarland.logs.roku.com
-0.0.0.0	traces.sr.roku.com
-0.0.0.0	track.sr.roku.com
-0.0.0.0	tyler.logs.roku.com
-0.0.0.0	victoria.logs.roku.com
-0.0.0.0	windsor.logs.roku.com
-0.0.0.0	wwwimg.roku.com
+# ============================================================
+# Roku Pi-hole Block List
+# Format: hosts file (0.0.0.0 <domain>)
+# Compatible with: Pi-hole v5/v6, AdGuard Home
 #
-0.0.0.0 amoeba.web.roku.com
-0.0.0.0 assets.sr.roku.com
+# Covers: Roku ad servers, telemetry/logging endpoints,
+#         analytics platforms, and tracking infrastructure
+#
+# ============================================================
+
+
+# ============================================================
+# SECTION 1: Roku Ad Servers
+# Primary advertising delivery endpoints.
+# ============================================================
+
+0.0.0.0 p.ads.roku.com
+0.0.0.0 i.ads.roku.com
+0.0.0.0 ads.roku.com
+0.0.0.0 identity.ads.roku.com
+0.0.0.0 identity-dev.ads.roku.com
+0.0.0.0 admanager.roku.com
+0.0.0.0 targetspot.roku.com
+
+# ravm.tv — Roku Ad Video Manager (Roku's own ad platform)
+0.0.0.0 ravm.tv
+0.0.0.0 raps.ravm.tv
+0.0.0.0 raps-perf.ravm.tv
+0.0.0.0 rxr.ravm.tv
+0.0.0.0 display.ravm.tv
+
+# Voice / CTI telemetry
+0.0.0.0 samples.voice.cti.roku.com
+
+
+# ============================================================
+# SECTION 2: Roku Telemetry & Logging Servers
+# Named after US cities — Roku's internal logging cluster.
+# ============================================================
+
+0.0.0.0 logs.roku.com
+0.0.0.0 scribe.logs.roku.com
+0.0.0.0 tyler.logs.roku.com
+0.0.0.0 giga.logs.roku.com
+0.0.0.0 cooper.logs.roku.com
+0.0.0.0 austin.logs.roku.com
+0.0.0.0 griffin.logs.roku.com
+0.0.0.0 liberty.logs.roku.com
+0.0.0.0 littlefield.logs.roku.com
+0.0.0.0 paolo.logs.roku.com
+0.0.0.0 sugarland.logs.roku.com
+0.0.0.0 victoria.logs.roku.com
+0.0.0.0 windsor.logs.roku.com
+0.0.0.0 amarillo.logs.roku.com
+0.0.0.0 bryan.logs.roku.com
+0.0.0.0 camden.logs.roku.com
+0.0.0.0 digdug.logs.roku.com
+0.0.0.0 digdug-g2.logs.roku.com
+0.0.0.0 esp.logs.roku.com
+0.0.0.0 gilbert.logs.roku.com
+0.0.0.0 hereford.logs.roku.com
+0.0.0.0 lagrange.logs.roku.com
+0.0.0.0 longview.logs.roku.com
+0.0.0.0 midland.logs.roku.com
+0.0.0.0 mobile.logs.roku.com
+0.0.0.0 richmond.logs.roku.com
+0.0.0.0 rollingwood.logs.roku.com
+
+
+# ============================================================
+# SECTION 3: Roku Analytics & Tracking Infrastructure
+# Cloud services, ACR (Automatic Content Recognition),
+# and audience measurement endpoints.
+# ============================================================
+
 0.0.0.0 cloudservices.roku.com
+0.0.0.0 amoeba.web.roku.com
+0.0.0.0 amoeba-plus.web.roku.com
+0.0.0.0 customer-feedbacks.web.roku.com
+0.0.0.0 analytics.roku.com
+0.0.0.0 acr.roku.com
+0.0.0.0 tracking.roku.com
+0.0.0.0 data.roku.com
+0.0.0.0 events.roku.com
+0.0.0.0 measurement.roku.com
+
+
+# ============================================================
+# SECTION 4: Roku Asset / Suggestion / Mobile Endpoints
+# Recommendation engine, ad asset delivery, mobile sync.
+# (These can be blocked but may affect Home Screen ads/layout)
+# ============================================================
+
+0.0.0.0 assets.sr.roku.com
+0.0.0.0 traces.sr.roku.com
+0.0.0.0 track.sr.roku.com
 0.0.0.0 prod.mobile.roku.com
 0.0.0.0 wwwimg.roku.com
-0.0.0.0 customer-feedbacks.web.roku.com
-0.0.0.0 cloudservices.roku.com
-0.0.0.0 austin.logs.roku.com
-0.0.0.0 tyler.logs.roku.com
-0.0.0.0 cooper.logs.roku.com
-0.0.0.0 giga.logs.roku.com
-0.0.0.0 scribe.logs.roku.com
+0.0.0.0 sr.roku.com
+
+
+# ============================================================
+# SECTION 5: Third-Party Ad Networks Used by Roku
+# External advertising and audience measurement platforms
+# that Roku devices call out to directly
+# ============================================================
+
+# The Trade Desk (Roku's primary ad exchange partner)
+0.0.0.0 match.adsrvr.org
+0.0.0.0 pixel.adsrvr.org
+0.0.0.0 insight.adsrvr.org
+
+# Nielsen / comScore (audience measurement)
+0.0.0.0 secure-us.imrworldwide.com
+0.0.0.0 sb.scorecardresearch.com
+0.0.0.0 pixel.scorecardresearch.com
+0.0.0.0 b.scorecardresearch.com
+
+# DoubleVerify (ad fraud / brand safety measurement)
+0.0.0.0 cdn.doubleverify.com
+0.0.0.0 rtb.doubleverify.com
+0.0.0.0 pub.doubleverify.com
+
+# Moat Analytics (Oracle)
+0.0.0.0 px.moatads.com
+0.0.0.0 z.moatads.com
+
+# Innovid (Roku-owned CTV ad server, acquired 2022)
+0.0.0.0 ads.innovid.com
+0.0.0.0 track.innovid.com
+0.0.0.0 pixels.innovid.com
+0.0.0.0 cdn.innovid.com
+
+# FreeWheel / Comcast (ad serving)
+0.0.0.0 23video.fwmrm.net
+0.0.0.0 cdn.fwmrm.net
+0.0.0.0 a.fwmrm.net
+0.0.0.0 g.fwmrm.net
+
+# Tremor Video / Amobee (video ad network)
+0.0.0.0 s.tribalfusion.com
+0.0.0.0 exchange.tremormedia.com
+
+# Amazon Publisher Services (header bidding)
+0.0.0.0 s.amazon-adsystem.com
+0.0.0.0 advertising-api.amazon.com
+
+# Taboola
+0.0.0.0 trc.taboola.com
+0.0.0.0 cdn.taboola.com
+
+# Comscore / Rentrak
+0.0.0.0 rentrak.com
+
+# Samba TV (ACR / Smart TV tracking)
+0.0.0.0 smartclip.net
+0.0.0.0 data.samba.tv
+0.0.0.0 pixel.samba.tv
